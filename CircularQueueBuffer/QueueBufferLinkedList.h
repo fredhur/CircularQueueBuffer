@@ -104,8 +104,8 @@ public:
 	}
 	void print()
 	{
-		Node<T>* ptr = &head;
-		ptr = ptr->next_;
+		Node<T>* ptr = (&head)->next_;
+		
 		cout << "DEBUG data : ";
 		while (ptr != &tail)
 		{
