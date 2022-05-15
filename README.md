@@ -4,7 +4,8 @@
 2. Template parameters
 3. Member variables
 4. Member functions 
-5. Example
+5. Constructor
+6. Example
 
 
 ## 1. Concept
@@ -17,6 +18,8 @@ In this library, data is represented as template array.
 ### template <typename T , int bufferSize>
 > T : type that saved in SimpleBuffer.
 > bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
+> So if you want to make some buffer which stores 3 int types, declare like this.
+> SimpleBuffer < int , 3 > simplebuffer;
 
 
 ## 3. Member variables
@@ -40,7 +43,41 @@ In this library, data is represented as template array.
 |IsFull()|check if data is full or not||
 |isEmpty()|check data is empty or not||
 
-## 5. Example
+
+## 5. Constructor
+SimpleBuffer supports two Constructor.
+
+
+> 1.
+> '''c++
+SimpleBuffer()
+	{
+		head_ = 0;
+		tail_ = 0;
+		size_ = 0;
+		bufferSize_ = bufferSize + 1;
+	}
+'''
+
+
+>2.
+>'''c++
+SimpleBuffer(const T& initdata)
+	{
+		head_ = 0;
+		tail_ = 0;
+		size_ = 0;
+		bufferSize_ = bufferSize + 1;
+		for (int i = 0; i < bufferSize_; i++)
+		{
+			enqueue(initdata);
+		}
+
+	}
+'''
+
+
+## 6. Example
 
 >See main.cpp for example.
 
