@@ -10,7 +10,7 @@
 
 ## 1. Concept
 > CircularQueueBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
-SimpleBuffer implements this concept as normal array.
+SimpleBuffer implements this concept as normal array and circular queue concept.
 
 <img src="https://user-images.githubusercontent.com/7028314/168482819-55f8edca-3ff4-4955-9493-cb7fc30ab77b.png" width="400" height="300"/>
 
@@ -21,7 +21,7 @@ SimpleBuffer implements this concept as normal array.
 
 > #### T : type that saved in SimpleBuffer.<br>
 > #### bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
-> If you want to make SimpleBuffer which stores 3 int types, declare like this.
+> If you want to make SimpleBuffer which stores three integer types, declare like this.
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
 
@@ -39,8 +39,8 @@ SimpleBuffer implements this concept as normal array.
 
 |function|definition|note|
 |------|---|---|
-|front()|return oldest data|테스트3|
-|tail()|return latest data|테스트3|
+|front()|return oldest data||
+|tail()|return latest data||
 |enqueue()|enqueuing data to buffer_|if size is maximum, dequeuing and then enqueuing|
 |dequeue()|dequeuing data to buffer_|if empty, do nothing|
 |IsFull()|check if data is full or not||
@@ -79,6 +79,9 @@ SimpleBuffer(const T& initdata)
 	}
 ```
 
+## 5. Installation
+
+> It is header-only file. Just copy "Simplebuffer.h" to your project
 
 ## 6. Example
 
