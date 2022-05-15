@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MoreSimpleBuffer.h" />
+    <ClInclude Include="SimpleBuffer.h" />
     <ClInclude Include="QueueBufferArray.h" />
     <ClInclude Include="QueueBufferLinkedList.h" />
   </ItemGroup>

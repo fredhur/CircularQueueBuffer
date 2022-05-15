@@ -1,7 +1,7 @@
 
 #include "QueueBufferLinkedList.h"
 #include "QueueBufferArray.h"
-#include "MoreSimpleBuffer.h"
+#include "SimpleBuffer.h"
 int main()
 {
 	CircularQueueBuffer<int, 3> q;

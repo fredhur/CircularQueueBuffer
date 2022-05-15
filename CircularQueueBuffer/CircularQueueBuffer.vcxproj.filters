@@ -21,7 +21,7 @@
     <ClInclude Include="QueueBufferArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="MoreSimpleBuffer.h">
+    <ClInclude Include="SimpleBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

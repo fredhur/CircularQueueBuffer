@@ -1,22 +1,19 @@
 #pragma once
 #include <iostream>
 using namespace std;
-template <typename T>
-T ABS(T a)
-{
-	return a > 0 ? a : -a;
-}
 
-template<typename T,  int bufferSize>
+#define ABS(x)  (((x)<0)?-(x):(x))
+template<typename T, int bufferSize>
 class SimpleBuffer
 {
 public:
+	
 	SimpleBuffer()
 	{
 		head_ = 0;
 		tail_ = 0;
 		size_ = 0;
-		bufferSize_ = bufferSize+1;
+		bufferSize_ = bufferSize + 1;
 	}
 	~SimpleBuffer() = default;
 	SimpleBuffer(const T& initdata)
@@ -24,25 +21,33 @@ public:
 		head_ = 0;
 		tail_ = 0;
 		size_ = 0;
-		bufferSize_ = bufferSize+1;
+		bufferSize_ = bufferSize + 1;
 		for (int i = 0; i < bufferSize_; i++)
 		{
 			enqueue(initdata);
 		}
-		
+
 	}
 	T front()
 	{
+		if (isEmpty()) { return buffer[0]; }
+
 		int i = head_;
 		i = (i + 1) % bufferSize_;
 		return buffer[i];
+	}
+	T tail()
+	{
+		if (isEmpty()) { return buffer[0]; }
+
+
+		return buffer[tail_];
 	}
 	void enqueue(const T& data)
 	{
 		if (IsFull())
 		{
 			dequeue();
-			// enqueue(data) 
 			tail_ = (tail_ + 1) % bufferSize_;
 			buffer[tail_] = data;
 			size_++;
@@ -55,9 +60,9 @@ public:
 			size_++;
 		}
 	}
-	T operator[](const int idx)
+	T operator[](const int idx)// don't want to return l-value 
 	{
-		
+
 		int cnt = ABS(idx);
 
 		if (idx >= 0)
@@ -66,39 +71,31 @@ public:
 			do
 			{
 				i = (i + 1) % bufferSize_;
-				if (i == tail_)
-					break;
+				if (i == tail_) break;
 			} while (i != head_ && cnt--);
 			return buffer[i];
 		}
 		else
 		{
 			int i = tail_;
-			
-			if (cnt > size_-1)
+			if (cnt > size_ - 1)
 			{
-
 				return buffer[i];
 			}
 
-			while( cnt--)
+			while (cnt--)
 			{
-			 
-				
 				if (i < 0)
 				{
 					i = bufferSize - 1;
 				}
 				if (i == head_) break;
-				
 				i--;
-			} 
+			}
 			return buffer[i];
 		}
-
-		
 	}
-	
+
 	void dequeue()
 	{
 		if (isEmpty())
@@ -136,17 +133,17 @@ private:
 	int tail_;
 	int size_;
 	int bufferSize_;
-	T buffer[bufferSize+1];
+	T buffer[bufferSize + 1];
 	bool IsFull()
 	{
 		return (tail_ + 1) % bufferSize_ == head_;
-		
+
 	}
 	bool isEmpty()
 	{
 		return head_ == tail_;
 	}
-	
+
 };
 
 
@@ -159,14 +156,14 @@ public:
 		frameNumber_(0),
 		sensorPlace_(0)
 	{
-		
+
 	}
-	AE_Buffer(const T& data) : 
+	AE_Buffer(const T& data) :
 		buffer_(data),
 		frameNumber_(0),
 		sensorPlace_(0)
 	{
-		
+
 	}
 	~AE_Buffer() = default;
 	void enqueue(const T& data)
@@ -185,13 +182,26 @@ public:
 	{
 		return buffer_[idx];
 	}
+	T GetCurrentData()
+	{
+		
+		return buffer_.tail();
+	}
 	int GetFrameNumber(const int idx)
 	{
 		return frameNumber_[idx];
 	}
+	int GetCurrentFrameNumber()
+	{
+		return frameNumber_.tail();
+	}
 	int GetSensorPlace(const int idx)
 	{
 		return sensorPlace_[idx];
+	}
+	int GetCurrentSensorPlace()
+	{
+		return sensorPlace_.tail();
 	}
 	void printAll()
 	{
