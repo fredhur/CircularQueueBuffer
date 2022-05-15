@@ -12,6 +12,8 @@
 > CircularQueueBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
 SimpleBuffer implements this concept as normal array.
 
+<img src="https://user-images.githubusercontent.com/7028314/168482819-55f8edca-3ff4-4955-9493-cb7fc30ab77b.png" width="400" height="300"/>
+
 
 
 ## 2. Template parameters
@@ -49,7 +51,7 @@ SimpleBuffer implements this concept as normal array.
 SimpleBuffer supports two Constructor.
 
 
-1. No parameters. In this case, start from empty buffer.
+1. In this case, Not any data is enqueuing to buffer.
 ```cpp
 SimpleBuffer()
 	{
@@ -61,7 +63,7 @@ SimpleBuffer()
 ```
 
 
->2. Give initialize data. In this case, all valuees in the buffer initialized with this initdata.
+>2. In this case, all valuees in the buffer initialized with initdata.
 ```cpp
 SimpleBuffer(const T& initdata)
 	{
