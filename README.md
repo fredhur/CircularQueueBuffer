@@ -48,8 +48,8 @@ In this library, data is represented as template array.
 SimpleBuffer supports two Constructor.
 
 
-> 1.
-> '''c++
+1. No parameters. In this case, start from empty buffer.
+```cpp
 SimpleBuffer()
 	{
 		head_ = 0;
@@ -57,11 +57,11 @@ SimpleBuffer()
 		size_ = 0;
 		bufferSize_ = bufferSize + 1;
 	}
-'''
+```
 
 
->2.
->'''c++
+>2. Give initialize data. In this case, all valuees in the buffer initialized with this initdata.
+```cpp
 SimpleBuffer(const T& initdata)
 	{
 		head_ = 0;
@@ -74,7 +74,7 @@ SimpleBuffer(const T& initdata)
 		}
 
 	}
-'''
+```
 
 
 ## 6. Example
