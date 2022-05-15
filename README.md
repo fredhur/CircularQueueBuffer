@@ -32,7 +32,7 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 |head_|the index of oldest data in the buffer_||
 |tail_|the index of latest data in the buffer_||
 |size_|the number of data in the buffer_|size<=bufferSize_|
-|bufferSize_|maximum number of data in the buffer_|bufferSize_ = bufferSize+1 (since head_ and tail_ start from 0|
+|bufferSize_|maximum number of data in the buffer_|bufferSize_ = bufferSize+1 (since head_ and tail_ start from 0)|
 |buffer_|the array of data||
 
 
@@ -64,7 +64,7 @@ SimpleBuffer()
 ```
 
 
->2. In this case, all valuees in the buffer initialized with initdata.
+>2. In this case, all values in the buffer initialized with initdata.
 ```cpp
 SimpleBuffer(const T& initdata)
 	{
