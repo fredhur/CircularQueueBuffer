@@ -11,15 +11,16 @@
 ## 1. Concept
 > CircularQueueBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
 SimpleBuffer implements this concept as normal array.
-In this library, data is represented as template array.
-  
+
+
 
 ## 2. Template parameters
 ### template <typename T , int bufferSize>
-> T : type that saved in SimpleBuffer.
-> bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
-> So if you want to make some buffer which stores 3 int types, declare like this.
-> SimpleBuffer < int , 3 > simplebuffer;
+
+> #### T : type that saved in SimpleBuffer.<br>
+> #### bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
+> If you want to make SimpleBuffer which stores 3 int types, declare like this.
+> **SimpleBuffer < int , 3 > simplebuffer;**
 
 
 ## 3. Member variables
