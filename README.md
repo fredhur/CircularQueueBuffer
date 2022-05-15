@@ -5,7 +5,8 @@
 3. Member variables
 4. Member functions 
 5. Constructor
-6. Example
+6. Installation
+7. Example
 
 
 ## 1. Concept
@@ -79,11 +80,11 @@ SimpleBuffer(const T& initdata)
 	}
 ```
 
-## 5. Installation
+## 6. Installation
 
 > It is header-only file. Just copy "Simplebuffer.h" to your project
 
-## 6. Example
+## 7. Example
 
 >See main.cpp for example.
 
