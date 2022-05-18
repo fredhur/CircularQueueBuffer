@@ -1,4 +1,4 @@
-# CircularQueueBuffer API DOCS ( only SimpleBuffer.h)
+# SimpleBuffer API DOCS (SimpleBuffer.h)
 
 1. Concpet
 2. Template parameters
@@ -11,7 +11,7 @@
 
 
 ## 1. Concept
-> CircularQueueBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
+> SimpleBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
 SimpleBuffer implements this concept as normal array and circular queue concept.
 
 <img src="https://user-images.githubusercontent.com/7028314/168482819-55f8edca-3ff4-4955-9493-cb7fc30ab77b.png" width="400" height="300"/>
@@ -30,10 +30,10 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 ## 3. Member variables
 |member type|defenition|note|
 |------|---|---|
-|head_|the index of oldest data in the buffer_||
-|tail_|the index of latest data in the buffer_||
+|head_|the index of oldest data in the buffer_|starts from -1|
+|tail_|the index of latest data in the buffer_|starts from -1|
 |size_|the number of data in the buffer_|size<=bufferSize_|
-|bufferSize_|maximum number of data in the buffer_|bufferSize_ = bufferSize+1 (since head_ and tail_ start from 0)|
+|bufferSize_|maximum number of data in the buffer_||
 |buffer_|the array of data||
 
 
@@ -45,7 +45,7 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 |tail()|return latest data||
 |enqueue()|enqueuing data to buffer_|if size is maximum, dequeuing and then enqueuing|
 |dequeue()|dequeuing data to buffer_|if empty, do nothing|
-|IsFull()|check if data is full or not||
+|IsFull()|check if data is full or not|head_==tail_+1 : happens when tail_ turn around array<br> https://www.programiz.com/dsa/circular-queue|
 |isEmpty()|check data is empty or not||
 
 
@@ -60,7 +60,7 @@ SimpleBuffer()
 		head_ = 0;
 		tail_ = 0;
 		size_ = 0;
-		bufferSize_ = bufferSize + 1;
+		bufferSize_ = bufferSize;
 	}
 ```
 
@@ -72,7 +72,7 @@ SimpleBuffer(const T& initdata)
 		head_ = 0;
 		tail_ = 0;
 		size_ = 0;
-		bufferSize_ = bufferSize + 1;
+		bufferSize_ = bufferSize;
 		for (int i = 0; i < bufferSize_; i++)
 		{
 			enqueue(initdata);
@@ -82,8 +82,8 @@ SimpleBuffer(const T& initdata)
 ```
 
 ## 6. Operator []
-> [0], [1], [2] : The larger the number, return the older value
-> [-1]. [-2], [-3] : The smaller the number, return the more recent value
+> [0], [1], [2] : The larger the number, return the older value. [0] : oldest data <br>
+> [-1]. [-2], [-3] : The smaller the number, return the more recent value. [-1] : latest data
 
 ## 7. Installation
 
