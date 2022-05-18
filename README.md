@@ -57,8 +57,8 @@ SimpleBuffer supports two Constructor.
 ```cpp
 SimpleBuffer()
 	{
-		head_ = 0;
-		tail_ = 0;
+		head_ = -1;
+		tail_ = -1;
 		size_ = 0;
 		bufferSize_ = bufferSize;
 	}
@@ -69,8 +69,8 @@ SimpleBuffer()
 ```cpp
 SimpleBuffer(const T& initdata)
 	{
-		head_ = 0;
-		tail_ = 0;
+		head_ = -1;
+		tail_ = -1;
 		size_ = 0;
 		bufferSize_ = bufferSize;
 		for (int i = 0; i < bufferSize_; i++)
