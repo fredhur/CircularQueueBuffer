@@ -10,31 +10,27 @@ public:
 	
 	SimpleBuffer()
 	{
-		head_ = 0;
-		tail_ = 0;
+		head_ = -1;
+		tail_ = -1;
 		size_ = 0;
-		bufferSize_ = bufferSize + 1;
+		bufferSize_ = bufferSize ;
 	}
 	~SimpleBuffer() = default;
 	SimpleBuffer(const T& initdata)
 	{
-		head_ = 0;
-		tail_ = 0;
+		head_ = -1;
+		tail_ = -1;
 		size_ = 0;
-		bufferSize_ = bufferSize + 1;
+		bufferSize_ = bufferSize ;
 		for (int i = 0; i < bufferSize_; i++)
 		{
 			enqueue(initdata);
 		}
-
 	}
 	T front()
 	{
-		if (isEmpty()) { return buffer[0]; }
-
-		int i = head_;
-		i = (i + 1) % bufferSize_;
-		return buffer[i];
+		if (isEmpty()) { return T(); }
+		return buffer[head_];
 	}
 	T tail()
 	{
@@ -48,51 +44,26 @@ public:
 		if (IsFull())
 		{
 			dequeue();
-			tail_ = (tail_ + 1) % bufferSize_;
-			buffer[tail_] = data;
-			size_++;
+			enqueue(data);
 			return;
 		}
 		else
 		{
-			tail_ = (tail_ + 1) % bufferSize_;
+			if (head_ == -1) head_ = 0;
+			tail_ = (tail_ + 1) % (bufferSize_);
 			buffer[tail_] = data;
 			size_++;
 		}
 	}
 	T operator[](const int idx)// don't want to return l-value 
 	{
-
-		int cnt = ABS(idx);
-
 		if (idx >= 0)
 		{
-			int i = head_;
-			do
-			{
-				i = (i + 1) % bufferSize_;
-				if (i == tail_) break;
-			} while (i != head_ && cnt--);
-			return buffer[i];
+			return buffer[(head_+idx)%bufferSize_];
 		}
 		else
 		{
-			int i = tail_;
-			if (cnt > size_ - 1)
-			{
-				return buffer[i];
-			}
-
-			while (cnt--)
-			{
-				if (i < 0)
-				{
-					i = bufferSize - 1;
-				}
-				if (i == head_) break;
-				i--;
-			}
-			return buffer[i];
+			return buffer[(head_ + size_ + idx) % bufferSize_];
 		}
 	}
 
@@ -102,9 +73,20 @@ public:
 		{
 			return;
 		}
+		else
+		{
+			if (head_ == tail_)
+			{
+				head_ = -1, tail_ = -1;
+			}
+			else
+			{
+				head_ = (head_ + 1) % bufferSize_;
+			}
+		}
 
 		size_--;
-		head_ = (head_ + 1) % bufferSize_;
+		
 	}
 	void printAll()
 	{
@@ -117,14 +99,16 @@ public:
 		cout << "HEAD val : " << front() << endl;
 		cout << "TAIL val : " << buffer[tail_] << endl;
 		cout << "PRINTALL : ";
-		do
+		
+		
+		int idx = head_;
+
+		for (idx = head_; idx!=tail_; idx = (idx + 1) % bufferSize_)
 		{
-			i = (i + 1) % bufferSize_;
-			cout << buffer[i] << " ";
-			if (i == tail_)
-				break;
-		} while (i != head_);
-		cout << endl;
+			cout << buffer[idx] << " ";
+		}cout << buffer[idx] << endl;
+
+	
 		return;
 	}
 private:
@@ -133,15 +117,26 @@ private:
 	int tail_;
 	int size_;
 	int bufferSize_;
-	T buffer[bufferSize + 1];
+	T buffer[bufferSize];
 	bool IsFull()
 	{
-		return (tail_ + 1) % bufferSize_ == head_;
+
+		if (head_ == 0 && tail_ == (bufferSize_ - 1))
+		{
+			return true;
+		}
+		if (head_ == tail_ + 1)
+		{
+			return true;
+		}
+		return false;
 
 	}
 	bool isEmpty()
 	{
-		return head_ == tail_;
+		if (head_ == -1) { return true; }
+
+		else { return false; }
 	}
 
 };
