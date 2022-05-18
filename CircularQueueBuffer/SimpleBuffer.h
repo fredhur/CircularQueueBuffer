@@ -172,7 +172,7 @@ public:
 		frameNumber_.enqueue(frameNumber);
 		sensorPlace_.enqueue(sensorPlace);
 	}
-	T operator[](const int idx)
+	T GetDataFromIdx(const int idx)
 	{
 		return buffer_[idx];
 	}
@@ -181,7 +181,11 @@ public:
 		
 		return buffer_.tail();
 	}
-	int GetFrameNumber(const int idx)
+	T GetOldestData()
+	{
+		return buffer_[0];
+	}
+	int GetFrameNumberByIdx(const int idx)
 	{
 		return frameNumber_[idx];
 	}
@@ -189,13 +193,21 @@ public:
 	{
 		return frameNumber_.tail();
 	}
-	int GetSensorPlace(const int idx)
+	int GetOldestFrameNumber()
+	{
+		return frameNumber_[0];
+	}
+	int GetSensorPlaceByIdx(const int idx)
 	{
 		return sensorPlace_[idx];
 	}
 	int GetCurrentSensorPlace()
 	{
 		return sensorPlace_.tail();
+	}
+	int GetOldestSensorPlace()
+	{
+		return sensorPlace_[0];
 	}
 	void printAll()
 	{
