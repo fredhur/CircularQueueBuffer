@@ -5,8 +5,9 @@
 3. Member variables
 4. Member functions 
 5. Constructor
-6. Installation
-7. Example
+6. operator
+7. Installation
+8. Example
 
 
 ## 1. Concept
@@ -80,11 +81,15 @@ SimpleBuffer(const T& initdata)
 	}
 ```
 
-## 6. Installation
+## 6. Operator []
+> [0], [1], [2] : The larger the number, return the older value
+> [-1]. [-2], [-3] : The smaller the number, return the more recent value
+
+## 7. Installation
 
 > It is header-only file. Just copy "Simplebuffer.h" to your project
 
-## 7. Example
+## 8. Example
 
 >See main.cpp for example.
 
