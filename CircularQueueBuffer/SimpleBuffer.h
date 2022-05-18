@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-#define ABS(x)  (((x)<0)?-(x):(x))
 template<typename T, int bufferSize>
 class SimpleBuffer
 {
