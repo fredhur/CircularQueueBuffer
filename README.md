@@ -1,4 +1,4 @@
-# SimpleBuffer API DOCS (SimpleBuffer.h)
+# SimpleBuffer DOCS (SimpleBuffer.h)
 
 1. Concpet
 2. Template parameters
