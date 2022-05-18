@@ -23,7 +23,7 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 
 > #### T : type that saved in SimpleBuffer.<br>
 > #### bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
-> If you want to make SimpleBuffer which stores three integer types, declare like this.
+> If you want to make SimpleBuffer which stores three integer types, declare like this.<br>
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
 
