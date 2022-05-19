@@ -91,6 +91,6 @@ SimpleBuffer(const T& initdata)
 
 ## 8. Example
 
->See main.cpp for example.
+> TODO : step by step code explain
 
 
