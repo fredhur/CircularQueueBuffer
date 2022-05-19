@@ -45,8 +45,8 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 |tail()|return latest data||
 |enqueue()|enqueuing data to buffer_|if size is maximum, dequeuing and then enqueuing|
 |dequeue()|dequeuing data to buffer_|if empty, do nothing|
-|IsFull()|check if data is full or not|head_==tail_+1 : happens when tail_ turn around array<br> https://www.programiz.com/dsa/circular-queue|
-|isEmpty()|check data is empty or not||
+|IsFull()|check if data is full or not|2 case of full : happens when tail_ turn around array<br> https://www.programiz.com/dsa/circular-queue|
+|isEmpty()|check if data is empty or not||
 
 
 ## 5. Constructor
