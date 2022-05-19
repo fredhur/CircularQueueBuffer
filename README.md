@@ -82,8 +82,8 @@ SimpleBuffer(const T& initdata)
 ```
 
 ## 6. Operator []
-> [0], [1], [2] : The smaller the number, return the older value. [0] : oldest data <br>
-> [-1]. [-2], [-3] : The smaller the number, return the more recent value. [-1] : latest data
+> [0], [1], [2] : The bigger the number, return the more recent value. [0] : oldest data <br>
+> [-1]. [-2], [-3] : The smaller the number, return the older value. [-1] : latest data
 
 ## 7. Installation
 
