@@ -1,6 +1,6 @@
 # SimpleBuffer DOCS (SimpleBuffer.h)
 
-1. Concpet
+1. Concept
 2. Template parameters
 3. Member variables
 4. Member functions 
