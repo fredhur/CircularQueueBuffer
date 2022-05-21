@@ -22,8 +22,8 @@ SimpleBuffer is developed by using this concept via normal array and circular qu
 ## 2. Template parameters
 ### template <typename T , int bufferSize>
 
-> #### T : Decide type in SimpleBuffer.<br>
-> #### bufferSize : Maximum data size. Shifting data occurs when current size is bigger than bufferSize.
+> #### **typename T** Determines type in SimpleBuffer.<br>
+> #### **bufferSize** is Maximum data size. Shifting data occurs when SimpleBuffer is full.
 > If you want to make SimpleBuffer which stores three integer types, declare like this.<br>
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
