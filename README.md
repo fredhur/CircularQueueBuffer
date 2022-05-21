@@ -85,7 +85,7 @@ SimpleBuffer(const T& initdata)
 ```
 
 ## 6. Operator
-> SimpleBuffer supports bracket opeartor. And negative indexing. (like python)<br><br>
+> SimpleBuffer supports bracket opeartor and negative indexing. (like python)<br><br>
 > [0], [1], [2] ... : bigger number returns more recent value. ( 0 : oldest data) <br>
 > [-1]. [-2], [-3] ... : smaller number returns older value. ( -1 : latest data)
 
