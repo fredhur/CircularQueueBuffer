@@ -68,7 +68,7 @@ SimpleBuffer()
 ```
 
 
->2. In this case, initdata is enqueued to buffer until buffer_ is full.
+>2. In this case, **initdata** is enqueued to buffer until buffer_ is full.
 ```cpp
 SimpleBuffer(const T& initdata)
 	{
@@ -85,13 +85,13 @@ SimpleBuffer(const T& initdata)
 ```
 
 ## 6. Operator
-> Simple Buffer supports bracket opeartor. And also, support negative indexing. (like python)<br><br>
+> SimpleBuffer supports bracket opeartor. And negative indexing. (like python)<br><br>
 > [0], [1], [2] : The bigger the number, return the more recent value. [0] : oldest data <br>
 > [-1]. [-2], [-3] : The smaller the number, return the older value. [-1] : latest data
 
 ## 7. Installation
 
-> It is header-only file. Just copy "SimpleBuffer.h" to your project
+> It is header-only file. Just copy "SimpleBuffer.h" to your project.
 
 ## 8. Detail Usage
 
