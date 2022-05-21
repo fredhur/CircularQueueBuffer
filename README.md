@@ -12,7 +12,8 @@
 
 ## 1. Concept
 > SimpleBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
-SimpleBuffer implements this concept as normal array and circular queue concept.
+SimpleBuffer implements this concept as normal array and circular queue concept.  
+[Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
 <img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
 
@@ -30,6 +31,8 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 ## 3. Member variables
 |Member type|Defenition|note|
 |------|---|---|
+
+
 |head_|the index of oldest data in the buffer_|starts from -1|
 |tail_|the index of latest data in the buffer_|starts from -1|
 |size_|the number of data in the buffer_|size<=bufferSize_|
@@ -87,10 +90,20 @@ SimpleBuffer(const T& initdata)
 
 ## 7. Installation
 
-> It is header-only file. Just copy "Simplebuffer.h" to your project
+> It is header-only file. Just copy "SimpleBuffer.h" to your project
 
-## 8. Example
+## 8. Detail Usage
 
-> TODO : step by step code explain
+> Here are several example of how to use <u>SimpleBuffer</u> class
+> ### 1. Declaration<br>
+> SimpleBuffer needs to template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array. Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
+> ```cpp
+> #include "SimpleBuffer.h"
+> 
+> int main()
+> {
+>     SimpleBuffer <int, 3> foo
+> }
+```
 
 
