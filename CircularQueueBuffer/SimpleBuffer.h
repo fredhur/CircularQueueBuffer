@@ -42,13 +42,13 @@ template<typename T, int bufferSize>
 class SimpleBuffer
 {
 public:
-	
+
 	SimpleBuffer()
 	{
 		head_ = -1;
 		tail_ = -1;
 		size_ = 0;
-		bufferSize_ = bufferSize ;
+		bufferSize_ = bufferSize;
 	}
 	~SimpleBuffer() = default;
 	SimpleBuffer(const T& initdata)
@@ -56,19 +56,19 @@ public:
 		head_ = -1;
 		tail_ = -1;
 		size_ = 0;
-		bufferSize_ = bufferSize ;
+		bufferSize_ = bufferSize;
 		for (int i = 0; i < bufferSize_; i++)
 		{
 			enqueue(initdata);
 		}
 	}
-	T front() const 
+	T front() const
 	{
 		if (isEmpty()) { return T(); }
-		
+
 		return buffer[head_];
 	}
-	T tail() const 
+	T tail() const
 	{
 		if (isEmpty()) { return T(); }
 
@@ -97,7 +97,7 @@ public:
 
 		if (idx >= 0)
 		{
-			return buffer[(head_+idx)%bufferSize_];
+			return buffer[(head_ + idx) % bufferSize_];
 		}
 		else
 		{
@@ -124,7 +124,7 @@ public:
 		}
 
 		size_--;
-		
+
 	}
 	void printAll()
 	{
@@ -137,16 +137,16 @@ public:
 		cout << "HEAD val : " << front() << endl;
 		cout << "TAIL val : " << buffer[tail_] << endl;
 		cout << "PRINTALL : ";
-		
-		
+
+
 		int idx = head_;
 
-		for (idx = head_; idx!=tail_; idx = (idx + 1) % bufferSize_)
+		for (idx = head_; idx != tail_; idx = (idx + 1) % bufferSize_)
 		{
 			cout << buffer[idx] << " ";
 		} cout << buffer[idx] << endl;
 
-	
+
 		return;
 	}
 private:
@@ -170,7 +170,7 @@ private:
 		return false;
 
 	}
-	bool isEmpty() const 
+	bool isEmpty() const
 	{
 		if (head_ == -1) { return true; }
 
@@ -188,7 +188,7 @@ class AE_Buffer
 public:
 	AE_Buffer()
 	{
-		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM) ,"AE_Buffer Size is limited to 30. So do not use more than 30, unless change FrameInfoIdx::MAX_FRAME_NUM");
+		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM), "AE_Buffer Size is limited to 30. So do not use more than 30, unless change FrameInfoIdx::MAX_FRAME_NUM");
 	}
 	AE_Buffer(const T& data) :
 		buffer_(data),
@@ -204,7 +204,7 @@ public:
 		frameNumber_.enqueue(0);
 		sensorPlace_.enqueue(0);
 	}
-	void enqueue(const T& data, const int& frameNumber, const int& sensorPlace) 
+	void enqueue(const T& data, const int& frameNumber, const int& sensorPlace)
 	{
 		buffer_.enqueue(data);
 		frameNumber_.enqueue(frameNumber);
@@ -226,7 +226,7 @@ public:
 		const auto idx = static_cast<int>(frameInfoIdx);
 		return frameNumber_[idx];
 	}
-	void printAll() 
+	void printAll()
 	{
 		buffer_.printAll();
 		frameNumber_.printAll();
