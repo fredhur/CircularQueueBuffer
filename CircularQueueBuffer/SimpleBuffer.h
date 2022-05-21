@@ -186,19 +186,16 @@ template <typename T, int size>
 class AE_Buffer
 {
 public:
-	AE_Buffer() :
-		buffer_(0),
-		frameNumber_(0),
-		sensorPlace_(0)
+	AE_Buffer()
 	{
-		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM) ,"AE_Buffer Size is limited to 30. So do not use more than 30, unless you should change FrameInfoIdx::MAX_FRAME_NUM");
+		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM) ,"AE_Buffer Size is limited to 30. So do not use more than 30, unless change FrameInfoIdx::MAX_FRAME_NUM");
 	}
 	AE_Buffer(const T& data) :
 		buffer_(data),
 		frameNumber_(0),
 		sensorPlace_(0)
 	{
-		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM), "AE_Buffer Size is limited to 30, do not use more than 30, if not you should change FrameInfoIdx::MAX_FRAME_NUM");
+		static_assert(size <= static_cast<int>(FrameInfoIdx::MAX_FRAME_NUM), "AE_Buffer Size is limited to 30, do not use more than 30, unless change FrameInfoIdx::MAX_FRAME_NUM");
 	}
 	~AE_Buffer() = default;
 	void enqueue(const T& data)
@@ -215,18 +212,18 @@ public:
 	}
 	T GetDataByFrameIdx(FrameInfoIdx frameInfoIdx) const
 	{
-		const int idx = static_cast<int>(frameInfoIdx);
+		const auto idx = static_cast<int>(frameInfoIdx);
 
 		return buffer_[idx];
 	}
 	int GetSenSorPlaceInfoFromIdx(FrameInfoIdx frameInfoIdx) const
 	{
-		const int idx = static_cast<int>(frameInfoIdx);
+		const auto idx = static_cast<int>(frameInfoIdx);
 		return sensorPlace_[idx];
 	}
 	int GetFrameNumberInfoFromIdx(FrameInfoIdx frameInfoIdx) const
 	{
-		const int idx = static_cast<int>(frameInfoIdx);
+		const auto idx = static_cast<int>(frameInfoIdx);
 		return frameNumber_[idx];
 	}
 	void printAll() 
