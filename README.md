@@ -11,7 +11,7 @@
 
 
 ## 1. Concept
-> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. But difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum.
+> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. But difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum
 SimpleBuffer is developed by using this concept via normal array and circular queue.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
@@ -31,11 +31,13 @@ SimpleBuffer is developed by using this concept via normal array and circular qu
 ## 3. Member variables
 |Member type|Definition|note|
 |------|---|---|
-|head_|the index of oldest data in the buffer_|starts from -1|
-|tail_|the index of latest data in the buffer_|starts from -1|
-|size_|the number of data in the buffer_|size<=bufferSize_|
-|bufferSize_|maximum number of data in the buffer_||
 |buffer_|the array of data|Since SimpleBuffer use circular queue, use array.|
+|bufferSize_|maximum number of data in the buffer_||
+|head_|index of the oldest data in the buffer_|starts from -1|
+|tail_|index of the latest data in the buffer_|starts from -1|
+|size_|the number of data in the buffer_|size<=bufferSize_|
+
+
 
 
 ## 4. Member functions
