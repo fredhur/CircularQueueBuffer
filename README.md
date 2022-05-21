@@ -28,7 +28,7 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
 
-## 3. Member Variables
+## 3. Member variables
 |Member type|Definition|Note|
 |------|---|---|
 |buffer_|the array of data|Not LinkedList but Array. SimpleBuffer is developed by using circular queue concept.|
@@ -104,9 +104,10 @@ SimpleBuffer(const T& initdata)
 > int main()
 > {
 >     SimpleBuffer <int, 3> foo
-> }```
+> }
+> 
 
->If you need enqueuing initdata during construction time, declare like this.
+>If you want to enqueue initdata during construction time, declare like this.
 
 >```cpp
 > #include "SimpleBuffer.h"
