@@ -68,7 +68,7 @@ SimpleBuffer()
 ```
 
 
->2. In this case, all values in the buffer initialized with initdata.
+>2. In this case, initdata is enqueued to buffer until buffer_ is full.
 ```cpp
 SimpleBuffer(const T& initdata)
 	{
