@@ -12,7 +12,7 @@
 
 ## 1. Concept
 > **SimpleBuffer** is fixed size Queue which seems like FIFO queue. But difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum.
-SimpleBuffer is developed by using this concept via normal array and circular queue.  
+SimpleBuffer is developed by using this concept via circular queue concept.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
 <img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
@@ -31,7 +31,7 @@ SimpleBuffer is developed by using this concept via normal array and circular qu
 ## 3. Member variables
 |Member type|Definition|note|
 |------|---|---|
-|buffer_|the array of data|Not LinkedList but Array. SimpleBuffer developed by using circularqueue concept|
+|buffer_|the array of data|Not LinkedList but Array. SimpleBuffer is developed by using circular queue concept|
 |bufferSize_|maximum number of data in the buffer_||
 |head_|index of the oldest data in the buffer_|starts from -1|
 |tail_|index of the latest data in the buffer_|starts from -1|
