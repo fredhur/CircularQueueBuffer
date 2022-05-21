@@ -97,7 +97,7 @@ SimpleBuffer(const T& initdata)
 
 > Here are several examples of how to use <u>SimpleBuffer</u> class
 > ### 1. Declaration<br>
-> SimpleBuffer needs to template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array.<br> Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
+> SimpleBuffer needs two template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array.<br> Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
 > ```cpp
 > #include "SimpleBuffer.h"
 > // SimpleBuffer which contains 3 integer type datas.
