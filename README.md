@@ -31,8 +31,6 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 ## 3. Member variables
 |Member type|Defenition|note|
 |------|---|---|
-
-
 |head_|the index of oldest data in the buffer_|starts from -1|
 |tail_|the index of latest data in the buffer_|starts from -1|
 |size_|the number of data in the buffer_|size<=bufferSize_|
