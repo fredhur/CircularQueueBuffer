@@ -23,7 +23,7 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 ### template <typename T , int bufferSize>
 
 > ### **typename T** determines type in SimpleBuffer.<br>
-> ### **bufferSize** is maximum data size. Shifting data occurs when SimpleBuffer is full.
+> ### **bufferSize** is maximum size of data. Shifting data occurs when SimpleBuffer is full.
 > If you want to make SimpleBuffer which stores three integer types, declare like this.<br>
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
@@ -32,7 +32,7 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 |Member type|Definition|note|
 |------|---|---|
 |buffer_|the array of data|Not LinkedList but Array. SimpleBuffer is developed by using circular queue concept.|
-|bufferSize_|maximum data in the buffer_||
+|bufferSize_|maximum size of buffer_||
 |head_|index of the oldest data in the buffer_|starts from -1|
 |tail_|index of the latest data in the buffer_|starts from -1|
 |size_|the number of data in the buffer_|size<=bufferSize_|
