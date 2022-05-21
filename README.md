@@ -1,13 +1,13 @@
 # SimpleBuffer DOCS (SimpleBuffer.h)
 
 1. Concept
-2. Template parameters
-3. Member variables
-4. Member functions 
+2. Template Parameters
+3. Member Variables
+4. Member Functions 
 5. Constructor
-6. operator
+6. Operator
 7. Installation
-8. Example
+8. Detail Usage
 
 
 ## 1. Concept
@@ -82,7 +82,8 @@ SimpleBuffer(const T& initdata)
 	}
 ```
 
-## 6. Operator []
+## 6. Operator
+> Simple Buffer supports bracket opeartor. Also, support negative indexing. (like python)<br><br>
 > [0], [1], [2] : The bigger the number, return the more recent value. [0] : oldest data <br>
 > [-1]. [-2], [-3] : The smaller the number, return the older value. [-1] : latest data
 
@@ -94,14 +95,41 @@ SimpleBuffer(const T& initdata)
 
 > Here are several example of how to use <u>SimpleBuffer</u> class
 > ### 1. Declaration<br>
-> SimpleBuffer needs to template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array. Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
+> SimpleBuffer needs to template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array.<br> Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
 > ```cpp
 > #include "SimpleBuffer.h"
-> 
+> // SimpleBuffer which contains 3 integer type datas.
 > int main()
 > {
 >     SimpleBuffer <int, 3> foo
+> }```
+
+>Or, if you want to SimpleBuffer that saves 3 integer types with all data is already enqueued with 3, declare like this
+
+>```cpp
+> #include "SimpleBuffer.h"
+> // SimpleBuffer which contains 3 integer type datas and all data is already enqueued with 3
+> int main()
+> {
+>     SimpleBuffer <int, 3> foo(3);
 > }
-```
+
+> ### 2. Member functions
+> Below code shows how to use public member functions.
+> ```cpp
+> #include "SimpleBuffer.h"
+> #include 
+> int main()
+> {
+>   SimpleBuffer <int , 4> foo(5);
+>  
+>   auto front = foo.front();//get front data.
+>   auto tail = foo.tail(); // get tail data.
+>   foo.enqueue(7); // enqueue data 7.
+>   foo.dequeue(); //  dequeue foo.
+>   auto data_3rd = foo[3]; // read 3rd data of foo.
+>   foo.printAll(); // print data from head to tail.
+> }
+> ```
 
 
