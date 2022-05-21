@@ -19,7 +19,7 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 
 
 
-## 2. Template parameters
+## 2. Template Parameters
 ### template <typename T , int bufferSize>
 
 > **'typename T'** determines type in SimpleBuffer.<br>
@@ -29,27 +29,27 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 
 
 ## 3. Member variables
-|Member type|Definition|note|
+|Member type|Definition|Note|
 |------|---|---|
 |buffer_|the array of data|Not LinkedList but Array. SimpleBuffer is developed by using circular queue concept.|
 |bufferSize_|maximum size of buffer_||
 |head_|index of the oldest data in the buffer_|starts from -1|
 |tail_|index of the latest data in the buffer_|starts from -1|
-|size_|the number of data in the buffer_|size<=bufferSize_|
+|size_|the number of data in the buffer_|size_<=bufferSize_|
 
 
 
 
-## 4. Member functions
+## 4. Member Functions
 
-|function|definition|note|
+|Function|Definition|Note|
 |------|---|---|
 |front()|return oldest data||
 |tail()|return latest data||
-|enqueue()|enqueuing data to buffer_|if size is maximum, dequeuing and then enqueuing|
-|dequeue()|dequeuing data to buffer_|if empty, do nothing|
-|IsFull()|check if data is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
-|isEmpty()|check if data is empty or not||
+|enqueue()|enqueue data to buffer_|if full, dequeue and then enqueue|
+|dequeue()|dequeue data to buffer_|if empty, do nothing|
+|IsFull()|check if buffer_ is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
+|isEmpty()|check if buffer_ is empty or not||
 
 
 ## 5. Constructor
