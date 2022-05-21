@@ -35,7 +35,7 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 |tail_|the index of latest data in the buffer_|starts from -1|
 |size_|the number of data in the buffer_|size<=bufferSize_|
 |bufferSize_|maximum number of data in the buffer_||
-|buffer_|the array of data||
+|buffer_|the array of data|Since SimpleBuffer use circular queue, normal array is okay.|
 
 
 ## 4. Member functions
