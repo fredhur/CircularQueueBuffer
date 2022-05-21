@@ -14,7 +14,7 @@
 > SimpleBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
 SimpleBuffer implements this concept as normal array and circular queue concept.
 
-<img src="https://user-images.githubusercontent.com/7028314/168482819-55f8edca-3ff4-4955-9493-cb7fc30ab77b.png" width="400" height="300"/>
+<img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
 
 
 
@@ -28,7 +28,7 @@ SimpleBuffer implements this concept as normal array and circular queue concept.
 
 
 ## 3. Member variables
-|member type|defenition|note|
+|Member type|Defenition|note|
 |------|---|---|
 |head_|the index of oldest data in the buffer_|starts from -1|
 |tail_|the index of latest data in the buffer_|starts from -1|
