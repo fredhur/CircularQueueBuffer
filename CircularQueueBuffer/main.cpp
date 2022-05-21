@@ -2,6 +2,14 @@
 #include "QueueBufferLinkedList.h"
 #include "QueueBufferArray.h"
 #include "SimpleBuffer.h"
+
+typedef enum Foo_
+{
+	foo1,
+	foo2
+}Foo;
+
+
 int main()
 {
 	CircularQueueBuffer<int, 3> q;
@@ -62,14 +70,35 @@ int main()
 	cout << "REAL TEST" << endl;
 
 
-	AE_Buffer<int, 5> myBuffer;
+	AE_Buffer<int, 30> myBuffer(0);
 
+
+	
+
+	
 	for (int i = 0; i < 10; i++)
 	{
 		cout << i << " th" << endl;
 		myBuffer.enqueue(i, (i + 1000), 1);
 		myBuffer.printAll();
+
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_CURRENT) << endl;;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_1) << endl;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_2) << endl;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_3) << endl;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_4) << endl;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_5) << endl;
+		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_6) << endl;
+
+
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_CURRENT) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_1) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_2) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_3) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_4) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_5) << endl;
+		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_6) << endl;
 	}
-
-
+	
+	
 }
