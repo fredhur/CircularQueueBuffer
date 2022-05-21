@@ -56,7 +56,7 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 SimpleBuffer supports two Constructors.
 
 
-1. In this case, data is not enqueued to buffer when construction time.
+1. In this case, data is not enqueued to buffer during construction time.
 ```cpp
 SimpleBuffer()
 	{
