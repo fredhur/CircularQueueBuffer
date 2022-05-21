@@ -11,8 +11,8 @@
 
 
 ## 1. Concept
-> SimpleBuffer is **fixed size Queue**. It seems like FIFO queue, but difference between FIFO queue is that if new data is enqueuing while queue size is full, dequeuing queue and then enqueueing new data. ( a.k.a shift data).
-SimpleBuffer implements this concept as normal array and circular queue concept.  
+> **SimpleBuffer** is fixed size Queue which seems like FIFO queue, but difference between FIFO queue and SimpleBuffer is shift data when full.
+SimpleBuffer developed by using this concept via normal array and circular queue.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
 <img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
