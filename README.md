@@ -46,8 +46,8 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 |------|---|---|
 |front()|return oldest data||
 |tail()|return latest data||
-|enqueue()|enqueue data to buffer_|if full, dequeue and then enqueue|
-|dequeue()|dequeue data to buffer_|if empty, do nothing|
+|enqueue()|enqueue data to buffer_|if buffer_ is full, dequeue() and then enqueue()|
+|dequeue()|dequeue data to buffer_|if buffer_ is empty, do nothing|
 |IsFull()|check if buffer_ is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
 |isEmpty()|check if buffer_ is empty or not||
 
