@@ -11,7 +11,7 @@
 
 
 ## 1. Concept
-> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. But difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum.
+> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. The difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum.
 SimpleBuffer is developed by using this concept via circular queue concept.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
