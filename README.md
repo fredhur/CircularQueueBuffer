@@ -96,7 +96,7 @@ SimpleBuffer(const T& initdata)
 ## 8. Detail Usage
 
 > Here are several examples of how to use <u>SimpleBuffer</u> class
-> ### 1. Declaration<br>
+> ### 1) Declaration<br>
 > SimpleBuffer needs two template parameters. One is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array.<br> Below code shows how to declare SimpleBuffer that saves 3 integers.
 > ```cpp
 > #include "SimpleBuffer.h"
@@ -116,7 +116,7 @@ SimpleBuffer(const T& initdata)
 >     SimpleBuffer <int, 3> foo(4);// 4 is enqueued to SimpleBuffer.
 > }
 
-> ### 2. Member functions
+> ### 2) Member functions
 > Below code shows how to use public member functions.
 > ```cpp
 > #include "SimpleBuffer.h"
