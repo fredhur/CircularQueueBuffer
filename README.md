@@ -22,14 +22,14 @@ SimpleBuffer is developed by using this concept via normal array and circular qu
 ## 2. Template parameters
 ### template <typename T , int bufferSize>
 
-> #### T : type that saved in SimpleBuffer.<br>
-> #### bufferSize : Maximum data size. If current size is bigger than bufferSize, shifting data.
+> #### T : Decide type in SimpleBuffer.<br>
+> #### bufferSize : Maximum data size. Shifting data occurs when current size is bigger than bufferSize.
 > If you want to make SimpleBuffer which stores three integer types, declare like this.<br>
 > **SimpleBuffer < int , 3 > simplebuffer;**
 
 
 ## 3. Member variables
-|Member type|Defenition|note|
+|Member type|Definition|note|
 |------|---|---|
 |head_|the index of oldest data in the buffer_|starts from -1|
 |tail_|the index of latest data in the buffer_|starts from -1|
