@@ -44,8 +44,8 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 
 |Function|Definition|Note|
 |------|---|---|
-|front()|return oldest data||
-|tail()|return latest data||
+|front()|return the oldest data||
+|tail()|return the latest data||
 |enqueue()|enqueue data to buffer_|if buffer_ is full, SimpleBuffer calls dequeue() and enqueue()|
 |dequeue()|dequeue data to buffer_|if buffer_ is empty, do nothing|
 |IsFull()|check if buffer_ is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
@@ -53,10 +53,10 @@ SimpleBuffer is developed by using this concept via circular queue concept.
 
 
 ## 5. Constructor
-SimpleBuffer supports two Constructor.
+SimpleBuffer supports two Constructors.
 
 
-1. In this case, Not any data is enqueuing to buffer.
+1. In this case, Any data is not enqueued to buffer.
 ```cpp
 SimpleBuffer()
 	{
