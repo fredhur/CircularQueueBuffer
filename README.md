@@ -11,8 +11,8 @@
 
 
 ## 1. Concept
-> **SimpleBuffer** is fixed size Queue which seems like FIFO queue, but difference between FIFO queue and SimpleBuffer is shift data when full.
-SimpleBuffer developed by using this concept via normal array and circular queue.  
+> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. But difference between FIFO queue and SimpleBuffer is shift data when full.
+SimpleBuffer is developed by using this concept via normal array and circular queue.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
 <img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
@@ -46,7 +46,7 @@ SimpleBuffer developed by using this concept via normal array and circular queue
 |tail()|return latest data||
 |enqueue()|enqueuing data to buffer_|if size is maximum, dequeuing and then enqueuing|
 |dequeue()|dequeuing data to buffer_|if empty, do nothing|
-|IsFull()|check if data is full or not|2 case of full : happens when tail_ turn around array<br> https://www.programiz.com/dsa/circular-queue|
+|IsFull()|check if data is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
 |isEmpty()|check if data is empty or not||
 
 
@@ -83,7 +83,7 @@ SimpleBuffer(const T& initdata)
 ```
 
 ## 6. Operator
-> Simple Buffer supports bracket opeartor. Also, support negative indexing. (like python)<br><br>
+> Simple Buffer supports bracket opeartor. And also, support negative indexing. (like python)<br><br>
 > [0], [1], [2] : The bigger the number, return the more recent value. [0] : oldest data <br>
 > [-1]. [-2], [-3] : The smaller the number, return the older value. [-1] : latest data
 
@@ -93,7 +93,7 @@ SimpleBuffer(const T& initdata)
 
 ## 8. Detail Usage
 
-> Here are several example of how to use <u>SimpleBuffer</u> class
+> Here are several examples of how to use <u>SimpleBuffer</u> class
 > ### 1. Declaration<br>
 > SimpleBuffer needs to template parameters. The one is class type ( or it could be primitive data type) and the other is size of SimpleBuffer. It seems like std::array.<br> Below code show if programmer wants to declare SimpleBuffer that saves integer type , and size is three
 > ```cpp
