@@ -11,7 +11,7 @@
 
 
 ## 1. Concept
-> ```SimpleBuffer``` is fixed size queue which seems like FIFO queue. The difference between FIFO queue and ```SimpleBuffer``` is that unlike FIFO queue, ```SimpleBuffer``` shifts data when SimpleBuffer's size is maximum.
+> ```SimpleBuffer``` is fixed size queue which seems like FIFO queue. The difference between FIFO queue and ```SimpleBuffer``` is that unlike FIFO queue, ```SimpleBuffer``` shifts data when its size is maximum.
 ```SimpleBuffer``` is developed by using this concept and circular queue concept.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
@@ -22,20 +22,20 @@
  2. Template Parameters
 ### ```template <typename T , int bufferSize>```
 
-> **'typename T'** determines type in SimpleBuffer.<br>
-> **'bufferSize'** determines maximum size of buffer_. Shifting data occurs when SimpleBuffer is full.
-> If you want to make SimpleBuffer which stores three integer types, declare like this.<br>
+> **'typename T'** determines type in ```SimpleBuffer```.<br>
+> **'bufferSize'** determines maximum size of ```buffer_```. Shifting data occurs when ```SimpleBuffer``` is full.
+> If you want to make ```SimpleBuffer``` which stores three integer types, declare like this.<br>
 > ```SimpleBuffer < int , 3 > simplebuffer;```
 
 
 ## 3. Member variables
 |Member type|Definition|Note|
 |------|---|---|
-|```buffer_```|the array of data|Not LinkedList but Array. SimpleBuffer is developed by using circular queue concept.|
+|```buffer_```|the array of data|Not LinkedList but Array. ```SimpleBuffer``` is developed by using circular queue concept.|
 |```bufferSize_```|maximum size of buffer_||
-|```head_```|index of the oldest data in the buffer_|starts from -1|
-|```tail_```|index of the latest data in the buffer_|starts from -1|
-|```size_```|the number of data in the buffer_|size_<=bufferSize_|
+|```head_```|index of the oldest data in the ```buffer_```|starts from -1|
+|```tail_```|index of the latest data in the ```buffer_```|starts from -1|
+|```size_```|the number of data in the ```buffer_```|```size_```<=```bufferSize_```|
 
 
 
@@ -46,10 +46,10 @@
 |------|---|---|
 |```front()```|return the oldest data||
 |```tail()```|return the latest data||
-|```enqueue()```|enqueue data to buffer_|if buffer_ is full, SimpleBuffer calls dequeue() and enqueue()|
-|```dequeue()```|dequeue data to buffer_|if buffer_ is empty, do nothing|
-|```IsFull()```|check if buffer_ is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
-|```isEmpty()```|check if buffer_ is empty or not||
+|```enqueue()```|enqueue data to ```buffer_```|if ```buffer_``` is full, ```SimpleBuffer``` calls ```dequeue()``` and ```enqueue()```|
+|```dequeue()```|dequeue data to ```buffer_```|if ```buffer_``` is empty, do nothing|
+|```IsFull()```|check if ```buffer_``` is full or not|[link](https://www.programiz.com/dsa/circular-queue)|
+|```isEmpty()```|check if ```buffer_``` is empty or not||
 
 
 ## 5. Constructor
