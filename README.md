@@ -90,7 +90,7 @@ SimpleBuffer(const T& initdata)
 
 ## 7. Installation
 
-> It is header-only file. Just copy ```"SimpleBuffer.h"```` to your project.
+> It is header-only file. Just copy ```"SimpleBuffer.h"``` to your project.
 
 ## 8. Detail Usage
 
