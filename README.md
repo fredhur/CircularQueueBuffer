@@ -15,11 +15,11 @@
 ```SimpleBuffer``` is developed by using this concept and circular queue concept.  
 [Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
 
-<img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="600" height="450"/>
+<img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="800" height="600"/>
 
 
 
-## 2. Template Parameters
+ 2. Template Parameters
 ### ```template <typename T , int bufferSize>```
 
 > **'typename T'** determines type in SimpleBuffer.<br>
