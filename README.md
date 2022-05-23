@@ -19,7 +19,7 @@
 
 
 
- 2. Template Parameters
+## 2. Template Parameters
 ### ```template <typename T , int bufferSize>```
 
 > **'typename T'** determines type in ```SimpleBuffer```.<br>
