@@ -119,7 +119,7 @@ SimpleBuffer(const T& initdata)
 > Below code shows how to use public member functions.
 > ```cpp
 > #include "SimpleBuffer.h"
- 
+>
 > int main()
 > {
 >   SimpleBuffer <int , 4> foo(5);
