@@ -1,5 +1,4 @@
 #pragma once
-// fixed size linkedlist at compile time.
 #include <iostream>
 using namespace std;
 template <typename T>
@@ -23,6 +22,7 @@ struct Node
 		next_ = next;
 		if (prev_)prev_->next_ = this;
 		if (next_)next_->prev_ = this;
+		
 		return;
 	}
 	void pop()
@@ -30,17 +30,19 @@ struct Node
 		if (prev_)prev_->next_ = next_;
 
 		if (next_)next_->prev_ = prev_;
+
+		return;
 	}
 
 	
 };
 
 template <typename T, int N>
-class  CircularQueueBuffer
+class  QueueBufferLinkedList
 {
 
 public:
-	CircularQueueBuffer()
+	QueueBufferLinkedList()
 	{
 		capacity = N;
 		bcnt = 0;
@@ -49,7 +51,7 @@ public:
 		tail.prev_ = &head;
 	
 	}
-	CircularQueueBuffer(const T& initData)
+	QueueBufferLinkedList(const T& initData)
 	{
 		capacity = N;
 		bcnt = 0;
@@ -67,7 +69,6 @@ public:
 
 		if (size == capacity)
 		{
-			// 꽉찰 경우 앞에거 떼서 뒤에다 붙이기.
 			Node <T>* ptr = head.next_;
 			ptr->pop();
 			ptr->alloc(tail.prev_, &tail, data);
@@ -102,11 +103,11 @@ public:
 			return ptr->data_;
 		}
 	}
-	void print()
+	void printAll()
 	{
 		Node<T>* ptr = (&head)->next_;
 		
-		cout << "DEBUG data : ";
+		
 		while (ptr != &tail)
 		{
 			cout << ptr->data_ << " ";

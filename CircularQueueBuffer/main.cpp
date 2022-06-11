@@ -3,102 +3,70 @@
 #include "QueueBufferArray.h"
 #include "SimpleBuffer.h"
 
-typedef enum Foo_
-{
-	foo1,
-	foo2
-}Foo;
-
-
 int main()
 {
-	CircularQueueBuffer<int, 3> q;
-	q.print();
+
+	cout << "Test QueueBufferLinekdList !! " << endl;
+	QueueBufferLinkedList<int, 3> queueBufferLinkedList;
+	queueBufferLinkedList.printAll();
 	for (int i = 0; i < 10; i++)
 	{
 		
-		q.enqueue(i);
-		q.print();
+		queueBufferLinkedList.enqueue(i);
+		queueBufferLinkedList.printAll();
 	}
 
 	for (int i = -1; i >=-3; i--)
 	{
-		cout << q[i] << endl;
+		cout << queueBufferLinkedList[i] << endl;
 	
 	}
 	
-	QueueBufferArray<int, 3> arr;
+	cout << "End of QueueBufferLinkedList test" << endl << endl << endl;;
 
-	arr.print();
+
+	cout << "Test QueueBufferArray !!" << endl;
+
+
+	QueueBufferArray<int, 3> queueBufferArray;
+
+	queueBufferArray.printAll();
 	for (int i = 0; i < 10; i++)
 	{
 
-		arr.enqueue(i);
-		arr.print();
+		queueBufferArray.enqueue(i);
+		queueBufferArray.printAll();
 	}
-	arr.print();
+	queueBufferArray.printAll();
 
 
-	SimpleBuffer<int, 10> arr2;
+	cout << "End of QueueBufferArray test" << endl << endl << endl;;
 
 
-	cout << "Enqueu" << endl;
+	cout << "Test SimpleBuffer !!" << endl;
+	SimpleBuffer<int, 10> simpleBuffer;
 
 
-	arr2.printAll();
+	
+
+
+	simpleBuffer.printAll();
 
 	for (int i = 0; i < 15; i++)
 	{
-		arr2.enqueue(i);
-		arr2.printAll();
-		cout << "This is idx 3 : " << arr2[3] << endl;
-		cout << "This is idx -2 : " << arr2[-2] << endl;
+		simpleBuffer.enqueue(i);
+		simpleBuffer.printAll();
 	}
-	cout << "DEQUE" << endl;
+	
 
 
 	for (int i = 0; i < 6; i++)
 	{
-		arr2.dequeue();
-		arr2.printAll();
-		cout << "This is idx -2 : " << arr2[-2] << endl;
+		simpleBuffer.dequeue();
+		simpleBuffer.printAll();
+	
 	}
+	cout << "End of SimpleBuffer test" << endl << endl<< "All test is done " << endl;;
 
 
-
-
-	cout << "REAL TEST" << endl;
-
-
-	AE_Buffer<int, 30> myBuffer(0);
-
-
-	
-
-	
-	for (int i = 0; i < 10; i++)
-	{
-		cout << i << " th" << endl;
-		myBuffer.enqueue(i, (i + 1000), 1);
-		myBuffer.printAll();
-
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_CURRENT) << endl;;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_1) << endl;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_2) << endl;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_3) << endl;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_4) << endl;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_5) << endl;
-		cout << "data check : " << myBuffer.GetDataByFrameIdx(FrameInfoIdx::FRAME_MINUS_6) << endl;
-
-
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_CURRENT) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_1) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_2) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_3) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_4) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_5) << endl;
-		cout << "frame check : " << myBuffer.GetFrameNumberInfoFromIdx(FrameInfoIdx::FRAME_MINUS_6) << endl;
-	}
-	
-	
 }

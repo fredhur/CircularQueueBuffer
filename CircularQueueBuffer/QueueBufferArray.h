@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 using namespace std;
+
+
 template <typename T, int bufferSize>
 class QueueBufferArray
 {
@@ -9,14 +11,8 @@ public:
 	{
 		capacity = bufferSize;
 		size=head = tail = 0;
-		
-		//cout << "Size and Cap init: " << size << " " << capacity << endl;
 	}
-	~QueueBufferArray()
-	{
-		
-		
-	}
+	~QueueBufferArray() = default;
 	QueueBufferArray(const T& data)
 	{
 		capacity = bufferSize;
@@ -26,11 +22,9 @@ public:
 		{
 			enqueue(data);
 		}
-	//	cout << "Size and Cap init: " << size << " " << capacity << endl;
 	}
 	void enqueue(const T& data)
 	{
-		//cout << "Size and Cap : " << size << " " << capacity << endl;
 		if (size == capacity)
 		{
 			shiftBuffer();
@@ -46,9 +40,8 @@ public:
 	{
 		return buffer[idx];
 	}
-	void print()
+	void printAll()
 	{
-		cout << "DEBUG : " << endl;
 		for (int i = 0; i < tail; i++)
 		{
 			cout << buffer[i] << " ";
