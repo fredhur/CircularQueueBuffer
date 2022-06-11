@@ -5,6 +5,14 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CircularQueueBuffer", "CircularQueueBuffer\CircularQueueBuffer.vcxproj", "{0B1E3FD2-997F-4E21-B30E-AD3EE1B89821}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{9884F786-A08D-48B7-95F8-909EBB155C2E}"
+	ProjectSection(SolutionItems) = preProject
+		QueueBufferArray.md = QueueBufferArray.md
+		QueueBufferLinkedList.md = QueueBufferLinkedList.md
+		README.md = README.md
+		SimpleBuffer.md = SimpleBuffer.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
