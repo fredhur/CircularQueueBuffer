@@ -44,20 +44,20 @@ class  QueueBufferLinkedList
 public:
 	QueueBufferLinkedList()
 	{
-		capacity = N;
-		bcnt = 0;
-		size = 0;
-		head.next_ = &tail;
-		tail.prev_ = &head;
+		capacity_ = N;
+		bcnt_ = 0;
+		size_ = 0;
+		head_.next_ = &tail_;
+		tail_.prev_ = &head_;
 	
 	}
 	QueueBufferLinkedList(const T& initData)
 	{
-		capacity = N;
-		bcnt = 0;
-		size = 0;
-		head.next_ = &tail;
-		tail.prev_ = &head;
+		capacity_ = N;
+		bcnt_ = 0;
+		size_ = 0;
+		head_.next_ = &tail_;
+		tail_.prev_ = &head_;
 		
 		for (int i = 0; i < N; i++)
 		{
@@ -67,17 +67,17 @@ public:
 	void enqueue(const T& data)
 	{
 
-		if (size == capacity)
+		if (size_ == capacity_)
 		{
-			Node <T>* ptr = head.next_;
+			Node <T>* ptr = head_.next_;
 			ptr->pop();
-			ptr->alloc(tail.prev_, &tail, data);
+			ptr->alloc(tail_.prev_, &tail_, data);
 			return;
 		}
 		else
 		{
-			buf[bcnt++].alloc(tail.prev_, &tail, data);
-			size++;
+			buf_[bcnt_++].alloc(tail_.prev_, &tail_, data);
+			size_++;
 		}
 
 		return;
@@ -86,7 +86,7 @@ public:
 	{
 		if (idx >= 0)
 		{
-			Node<T>* ptr = head.next_;
+			Node<T>* ptr = head_.next_;
 			for (int i = 0; i < idx; i++)
 			{
 				ptr = ptr->next_;
@@ -95,7 +95,7 @@ public:
 		}
 		else
 		{
-			Node<T>* ptr = tail.prev_;
+			Node<T>* ptr = tail_.prev_;
 			for (int i = -1; i >idx; i--)
 			{
 				ptr = ptr->prev_;
@@ -105,24 +105,24 @@ public:
 	}
 	void printAll()
 	{
-		Node<T>* ptr = (&head)->next_;
+		Node<T>* ptr = (&head_)->next_;
 		
 		
-		while (ptr != &tail)
+		while (ptr != &tail_)
 		{
 			cout << ptr->data_ << " ";
 			ptr = ptr->next_;
 		}cout << endl;
 	}
 private:
-	Node<T> buf[N + 1];// limit buffer
-	int capacity;
-	int size;
-	int bcnt;
-	Node<T>head;
-	Node<T>tail;
+	Node<T> buf_[N + 1];// Memory pool.
+	int capacity_;
+	int size_;
+	int bcnt_;
+	Node<T>head_;
+	Node<T>tail_;
 	bool IsEmpty() const
 	{
-		return head.next_ == &tail;
+		return head_.next_ == &tail_;
 	}
 };

@@ -5,6 +5,8 @@
 
 1. Concept
 2. Three types of Circular Queue Buffer
+3. Installation
+
 
 
 
@@ -22,11 +24,14 @@ CircularQueue Buffer is developed by using this concept via circular queue conce
 
 
 
-## Three types of Circular Queue Buffer
+## Three types of CircularQueue Buffer
 <details open>
-<summary> Lists </summary>
+<summary> <span style="font-size:150%">Various Kinds of CircularQueue Buffer  </span> </summary>
 
 1. [QueueBufferArray](./QueueBufferArray.md)
-2.  [QueueBufferLinkedList](./QueueBufferLinkedList.md)
-3.  [SimpleBuffer](./SimpleBuffer.md)
+2. [QueueBufferLinkedList](./QueueBufferLinkedList.md)
+3. [SimpleBuffer](./SimpleBuffer.md)
 </details>
+
+## 3. Installation
+> It is header-only file. Just copy ```"SimpleBuffer.h"``` , ```"QueueBufferArray.h```, and ```"QueueBufferLinkedList.h"``` to your project.

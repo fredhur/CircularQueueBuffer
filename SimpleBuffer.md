@@ -1,21 +1,18 @@
 # SimpleBuffer DOCS (SimpleBuffer.h)
 
-1. Concept
-2. Template Parameters
-3. Member Variables
-4. Member Functions 
-5. Constructor
-6. Operator
-7. Installation
-8. Detail Usage
+1. [Concept](#1-Concept)
+2. [Template Parameters](#2-template-parameters)
+3. [Member Variables](#3-Member-Vairables)
+4. [Member Functions](#4-MemberFunctions) 
+5. [Constructor](#5-Constructor)
+6. [Operator](#6-Operator)
+7. [Detail Usage](#7-detail-usage)
 
 
 ## 1. Concept
-> **SimpleBuffer** is fixed size Queue which seems like FIFO queue. The difference between FIFO queue and SimpleBuffer is that unlike FIFO queue, SimpleBuffer shifts data when SimpleBuffer's size is maximum.
-SimpleBuffer is developed by using this concept via circular queue concept.  
-[Wiki : Circular Queue](https://en.wikipedia.org/wiki/Circular_buffer)
+> **SimpleBuffer** use array to implement [CirQualrQueueBuffer](./README.md). The difference between QueueBufferArray is that **SimpleBuffer** use modulr operation. By using this, there is no shifting.
 
-<img src="https://user-images.githubusercontent.com/7028314/169650472-868089e6-92e2-4554-a2ac-4c99e857325f.png" width="500" height="300"/>
+
 
 
 
@@ -89,11 +86,8 @@ SimpleBuffer(const T& initdata)
 > [0], [1], [2] ... : bigger number returns more recent value. ( [0] : oldest data) <br>
 > [-1]. [-2], [-3] ... : smaller number returns older value. ( [-1] : latest data)
 
-## 7. Installation
 
-> It is header-only file. Just copy "SimpleBuffer.h" to your project.
-
-## 8. Detail Usage
+## 7. Detail Usage
 
 > Here are several examples of how to use <u>SimpleBuffer</u> class
 > ### 1. Declaration<br>

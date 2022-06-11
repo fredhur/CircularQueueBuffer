@@ -9,14 +9,14 @@ class QueueBufferArray
 public:
 	QueueBufferArray()
 	{
-		capacity = bufferSize;
-		size=head = tail = 0;
+		capacity_ = bufferSize;
+		size_=head_ = tail_ = 0;
 	}
 	~QueueBufferArray() = default;
 	QueueBufferArray(const T& data)
 	{
-		capacity = bufferSize;
-		size=head = tail = 0;
+		capacity_ = bufferSize;
+		size_=head_ = tail_ = 0;
 
 		for (int i = 0; i < bufferSize; i++)
 		{
@@ -25,40 +25,40 @@ public:
 	}
 	void enqueue(const T& data)
 	{
-		if (size == capacity)
+		if (size_ == capacity_)
 		{
 			shiftBuffer();
-			tail--;
-			buffer[tail++] = data;
+			tail_--;
+			buffer_[tail_++] = data;
 			return;
 		}
 
-		buffer[tail++] = data;
-		size++;
+		buffer_[tail_++] = data;
+		size_++;
 	}
 	T operator[](const int idx)const
 	{
-		return buffer[idx];
+		return buffer_[idx];
 	}
 	void printAll()
 	{
-		for (int i = 0; i < tail; i++)
+		for (int i = 0; i < tail_; i++)
 		{
-			cout << buffer[i] << " ";
+			cout << buffer_[i] << " ";
 		}cout << endl;
 	}
 private:
-	T buffer[bufferSize + 1];
+	T buffer_[bufferSize + 1];
 
-	int capacity;
-	int size;
-	int head;
-	int tail;
+	int capacity_;
+	int size_;
+	int head_;
+	int tail_;
 	void shiftBuffer()
 	{
-		for (int i = 0; i < size - 1; i++)
+		for (int i = 0; i < size_ - 1; i++)
 		{
-			buffer[i] = buffer[i + 1];
+			buffer_[i] = buffer_[i + 1];
 		}
 	}
 };
